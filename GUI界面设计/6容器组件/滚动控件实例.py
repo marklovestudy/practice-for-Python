@@ -1,0 +1,33 @@
+def begin(n):
+    top=Toplevel()
+    top.geometry('200x120')
+    top.title('%s号房间'%n)
+    top.configure(bg='pink')
+    Label(top,text='玩家准备就绪，请入坐！',font=14,bg='pink').grid(row=0,columnspan=7)
+    for j in range(1,15,3):
+        for i in range(1,37,3):
+            Button(top,image=ima1).grid(row=j,column=i,padx=10,pady=10)
+            Button(top,image=ima1).grid(row=j+1,column=i-1,padx=10,pady=10)
+            Button(top,image=ima1).grid(row=j + 1, column=i + 1,padx=10,pady=10)
+            Button(top,image=ima1).grid(row=j+2, column=i,padx=10,pady=10)
+from tkinter import *
+from PIL import Image,ImageTk
+win1=Tk()
+win1.geometry('270x220')
+win1.title('1号棋牌室')
+panedwindow=PanedWindow(sashrelief='sunken',background='gray',width=200)
+panedwindow.grid(row=3,columnspan=5,pady=10)
+b1=Button(panedwindow,text='%s号'%1,command=lambda:begin(1))
+panedwindow.add(b1)
+# b2=Button(panedwindow,text='%s号'%2,command=lambda:begin(2))
+# panedwindow.add(b2)
+# b3=Button(panedwindow,text='%s号'%3,command=lambda:begin(3))
+# panedwindow.add(b3)
+# b4=Button(panedwindow,text='%s号'%4,command=lambda:begin(4))
+# panedwindow.add(b4)
+# b5=Button(panedwindow,text='%s号'%5,command=lambda:begin(5))
+# panedwindow.add(b5)
+ima1=Image.open('11.png')
+ima1=ima1.resize((30,30),Image.LANCZOS)
+ima1=ImageTk.PhotoImage(ima1)
+win1.mainloop()
