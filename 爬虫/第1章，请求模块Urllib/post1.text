@@ -1,0 +1,19 @@
+{
+  "args": {}, 
+  "data": "", 
+  "files": {}, 
+  "form": {
+    "yyue": "a21bo.50862.201879"
+  }, 
+  "headers": {
+    "Accept-Encoding": "identity", 
+    "Content-Length": "23", 
+    "Content-Type": "application/x-www-form-urlencoded", 
+    "Host": "www.httpbin.org", 
+    "User-Agent": "Python-urllib/3.8", 
+    "X-Amzn-Trace-Id": "Root=1-63ebb174-1d74167f0f3e887c30704112"
+  }, 
+  "json": null, 
+  "origin": "223.73.237.112", 
+  "url": "https://www.httpbin.org/post"
+}
