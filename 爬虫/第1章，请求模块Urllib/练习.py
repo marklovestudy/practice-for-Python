@@ -1,12 +1,12 @@
-'''
-
-'''
-import urllib.request
-import urllib.parse
-
-url="https://s1.chu0.com/src/img/png/7d/7d041ef577b6465699c37f691a45097b.png?imageMogr2/auto-orient/thumbnail/!88x132r/gravity/Center/crop/88x132/quality/85/%7Cwatermark/3/image/aHR0cHM6Ly9zMS5haWdlaS5jb20vd2F0ZXJtYXJrLzYwLTIucG5nP2U9MTczNTQ4ODAwMCZ0b2tlbj1QN1MyWHB6ZnoxMXZBa0FTTFRrZkhON0Z3LW9PWkJlY3FlSmF4eXBMOnpYaVVCU1Y3SmNxRUUtUTZmTkdGOHVLZ3l2bz0=/dissolve/20/gravity/NorthWest/dx/29/dy/66/ws/0.0/wst/0&e=1735488000&token=1srnZGLKZ0Aqlz6dk7yF4SkiYf4eP-YrEOdM1sob:hlpFE8KTH1uRVOVi1ds5YAZOeeU="
-data=bytes(urllib.parse.urlencode({'py':345}),encoding='utf-8')
-r=urllib.request.Request(url=url,data=data,method='POST')
-response=urllib.request.urlopen(r)
-with open('jieta.png','wb') as f:
-    f.write(response.read())
+import urllib.request    # 导入urllib.request模块
+import urllib.error      # 导入urllib.error模块
+try:
+    # 向不存在的网络地址发送请求
+    response = urllib.request.urlopen('http://site2.rjkflm.com:666/123index.html',timeout=0.1)
+    print(response.status)
+except urllib.error.HTTPError as error:    # 捕获异常信息
+    print('状态码为：',error.code)                      # 打印状态码
+    print('异常信息为：',error.reason)                  # 打印异常原因
+    print('请求头信息如下：\n',error.headers)           # 打印请求头
+except urllib.error.URLError as error:
+    print('URLError.reason:',error.reason)
