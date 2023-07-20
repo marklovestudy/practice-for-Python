@@ -1,0 +1,1 @@
+mark购买了:['banana', 'apple']
