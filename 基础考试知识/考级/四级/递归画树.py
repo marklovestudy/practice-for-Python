@@ -1,0 +1,77 @@
+from turtle import *
+
+def yezhi():
+    pensize(1)
+    fx = heading()
+    x, y = xcor(), ycor()
+    color('green','green')
+    begin_fill()
+    circle(15,90)
+    right(270)
+    circle(15,90)
+    end_fill()
+    right(90)
+    color('brown')
+    penup()
+    setheading(fx)
+    goto(x, y)
+    pendown()
+    color('brown')
+
+def pg():
+    pensize(1)
+    fx=heading()
+    x,y=xcor(),ycor()
+    color('red','red')
+    setheading(270)
+    forward(5)
+    setheading(0)
+    begin_fill()
+    circle(-6)
+    end_fill()
+    penup()
+    setheading(fx)
+    goto(x,y)
+    pendown()
+    color('brown')
+
+def shu(b):
+    if b < 5:
+        yezhi()
+        return
+    elif b<130:
+        pg()
+        yezhi()
+        pensize(b/10)
+        forward(b)
+        right(20)
+        shu(b-20)
+        left(40)
+        shu(b-20)
+        right(20)
+        penup()
+        forward(-b)
+        pendown()
+    else:
+        pensize(b / 10)
+        forward(b)
+        right(20)
+        shu(b - 10)
+        left(40)
+        shu(b - 10)
+        right(20)
+        penup()
+        forward(-b)
+        pendown()
+
+def main():
+    left(90)
+    penup()
+    backward(400)
+    pendown()
+    speed(0)
+    color('brown')
+    shu(145)
+
+main()
+mainloop()
